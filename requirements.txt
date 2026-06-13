@@ -1,2 +1,2 @@
 vk-api>=11.9.0
-vkbottle>=4.0.0
+flask>=2.0.0
