@@ -118,13 +118,25 @@ def handle_message(user_id: int, text: str, vk):
         msg = get_quests_text(user_id)
         return msg, get_main_keyboard()
     
-    # МАГАЗИН ПРЕДМЕТОВ
-    elif text_lower in ['предметы', '🛍️ предметы', 'магазин предметов']:
+     # МАГАЗИН ПРЕДМЕТОВ
+    elif text_lower in ['предметы', '🛍️ предметы', 'магазин предметов', 'магазин']:
         msg = get_shop_text()
         return msg, get_main_keyboard()
     
-    elif text_lower in ['инвентарь', '🎒 инвентарь', '📦 инвентарь']:
+    elif text_lower in ['инвентарь', '🎒 инвентарь', '📦 инвентарь', 'мой инвентарь']:
         msg = get_inventory_text(user_id)
+        return msg, get_main_keyboard()
+    
+    # ПОКУПКА ПРЕДМЕТОВ
+    elif text_lower.startswith('купить '):
+        item_name = text[7:].strip()
+        success, msg = buy_item(user_id, item_name)
+        return msg, get_main_keyboard()
+    
+    # ИСПОЛЬЗОВАНИЕ ПРЕДМЕТОВ
+    elif text_lower.startswith('использовать '):
+        item_name = text[13:].strip()
+        success, msg = use_item(user_id, item_name)
         return msg, get_main_keyboard()
     
     # САДОВОДСТВО
