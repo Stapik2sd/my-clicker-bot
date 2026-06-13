@@ -13,7 +13,7 @@ from animals import buy_animal, collect_animal_income, get_my_animals_text, get_
 from friends import get_friends_list_text, get_friend_requests_text, send_friend_request, accept_request, reject_request, get_friends_keyboard_text
 from events import check_and_trigger_event, get_weather_forecast
 from quests import init_quests_table, get_quests_text, update_quest_progress
-from shop import init_shop_table, get_shop_text, get_inventory_text
+from shop import init_shop_table, get_shop_text, get_inventory_text, buy_item, use_item
 from gardening import init_gardening_table, get_garden_text
 from mini_games import game_dice, game_coinflip, game_blackjack, get_games_text
 from game_stats import get_detailed_stats, get_leaderboard_stats
